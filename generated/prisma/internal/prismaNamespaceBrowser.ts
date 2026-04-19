@@ -49,6 +49,7 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 
 export const ModelName = {
+  PasswordReset: 'PasswordReset',
   User: 'User'
 } as const
 
@@ -66,6 +67,17 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const PasswordResetScalarFieldEnum = {
+  userId: 'userId',
+  attempts: 'attempts',
+  code: 'code',
+  createdAt: 'createdAt',
+  expiresAt: 'expiresAt'
+} as const
+
+export type PasswordResetScalarFieldEnum = (typeof PasswordResetScalarFieldEnum)[keyof typeof PasswordResetScalarFieldEnum]
 
 
 export const UserScalarFieldEnum = {

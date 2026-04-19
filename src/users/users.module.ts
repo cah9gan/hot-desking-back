@@ -3,10 +3,11 @@ import { UsersControler } from './users.controller';
 import { UsersService } from './users.service';
 import { ProfileController } from './profile.controller';
 import { ProfileService } from './profile.service';
+import { PasswordResetService } from './password-reset.service';
 
 @Module({
   controllers: [UsersControler, ProfileController],
-  providers: [UsersService, ProfileService],
+  providers: [PasswordResetService, UsersService, ProfileService],
   exports: [ProfileService],
 })
 export class UsersModule {}
