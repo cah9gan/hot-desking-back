@@ -1,9 +1,8 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PrismaService } from '../prisma';
 import { Prisma } from '../../generated/prisma/client';
-import { config } from '../common';
+import { config, Hasher } from '../common';
 import { randomInt } from 'crypto';
-import * as argon2 from 'argon2';
 import { PasswordResetCodeDTO } from './dto';
 
 @Injectable()
@@ -13,7 +12,7 @@ export class PasswordResetService {
   public async createOrReplace(userId: string): Promise<PasswordResetCodeDTO> {
     const code = this.generateCode();
     const expiresAt = this.expiresAt();
-    const hash = await argon2.hash(code);
+    const hash = await Hasher.hash(code);
     const data: Prisma.PasswordResetUncheckedCreateInput = {
       userId,
       attempts: 0,
@@ -40,7 +39,7 @@ export class PasswordResetService {
     password: string,
   ): Promise<void> {
     await this.checkBeforeReset(userId, code);
-    const hash = await argon2.hash(password);
+    const hash = await Hasher.hash(password);
 
     await this.prisma.passwordReset.delete({
       where: { userId },
@@ -84,7 +83,7 @@ export class PasswordResetService {
       throw new UnauthorizedException('Attempts exceeded');
     }
 
-    if (!(await argon2.verify(data.code, code))) {
+    if (!(await Hasher.verify(data.code, code))) {
       await this.prisma.passwordReset.update({
         where: { userId },
         data: { attempts: data.attempts + 1 },
