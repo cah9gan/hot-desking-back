@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать! Создайте пароль</title>
+    <style type="text/css">
+        /* Базовые сбросы */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+        a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+
+        /* Основные стили */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f5f7;
+            font-family: Arial, sans-serif;
+            min-width: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .wrapper {
+            background-color: #f4f5f7;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .header {
+            padding: 40px 40px 20px;
+            border-bottom: 1px solid #eeeeee;
+            text-align: center;
+        }
+
+        .title {
+            margin: 0;
+            font-size: 24px;
+            color: #1a1a1a;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .text {
+            margin: 0 0 20px 0;
+            font-size: 16px;
+            line-height: 24px;
+            color: #333333;
+        }
+
+        /* Стили кнопки */
+        .btn-wrapper {
+            margin-bottom: 30px;
+        }
+        
+        .btn-cell {
+            background-color: #0066cc;
+            border-radius: 6px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-size: 16px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        /* Блок предупреждения */
+        .alert-box {
+            margin-bottom: 30px;
+            background-color: #fff8e1;
+            width: 100%;
+        }
+
+        .alert-accent {
+            width: 4px;
+            background-color: #ffc107;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        .alert-text {
+            padding: 16px;
+            font-size: 14px;
+            line-height: 21px;
+            color: #856404;
+        }
+
+        /* Альтернативная ссылка */
+        .alt-link-text {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            line-height: 20px;
+            color: #666666;
+        }
+
+        .alt-link {
+            margin: 0;
+            font-size: 14px;
+            line-height: 20px;
+            word-break: break-all;
+        }
+
+        .alt-link a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        /* Подвал */
+        .footer {
+            padding: 24px 40px;
+            background-color: #fafafa;
+            border-top: 1px solid #eeeeee;
+            text-align: center;
+        }
+
+        .footer-text {
+            margin: 0 0 10px 0;
+            font-size: 13px;
+            line-height: 18px;
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="wrapper">
+        <tr>
+            <td align="center">
+                
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" class="container">
+                    
+                    <tr>
+                        <td class="header">
+                            <h1 class="title">Добро пожаловать! 👋</h1>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="content">
+                            <p class="text">Здравствуйте, <strong>{{name}}</strong>!</p>
+                            <p class="text">Мы рады, что вы присоединились к нам. Чтобы завершить регистрацию и получить доступ к вашему аккаунту, пожалуйста, придумайте надежный пароль.</p>
+                            
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="btn-wrapper">
+                                <tr>
+                                    <td align="center">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="center" class="btn-cell">
+                                                    <a href="{{link}}" target="_blank" class="btn">Создать пароль</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <table border="0" cellpadding="0" cellspacing="0" class="alert-box">
+                                <tr>
+                                    <td class="alert-accent">&nbsp;</td>
+                                    <td class="alert-text">
+                                        ⏳ <strong>Обратите внимание:</strong> В целях безопасности эта ссылка для создания пароля действительна до <strong>{{expiration}}</strong>.
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <p class="alt-link-text">Если кнопка выше не работает, скопируйте и вставьте эту ссылку в адресную строку браузера:</p>
+                            <p class="alt-link">
+                                <a href="{{link}}" target="_blank">Ссылка_для_создания_пароля</a>
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="footer">
+                            <p class="footer-text">Если вы не регистрировались на нашем сайте, просто проигнорируйте и удалите это письмо.</p>
+                        </td>
+                    </tr>
+                    
+                </table>
+
+                </td>
+        </tr>
+    </table>
+
+</body>
+</html>
