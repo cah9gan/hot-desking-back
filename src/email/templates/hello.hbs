@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Добро пожаловать! Создайте пароль</title>
+    <title>Ласкаво просимо! Створіть пароль</title>
     <style type="text/css">
-        /* Базовые сбросы */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
         a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
 
-        /* Основные стили */
         body {
             margin: 0;
             padding: 0;
@@ -57,7 +55,6 @@
             color: #333333;
         }
 
-        /* Стили кнопки */
         .btn-wrapper {
             margin-bottom: 30px;
         }
@@ -77,7 +74,6 @@
             border-radius: 6px;
         }
 
-        /* Блок предупреждения */
         .alert-box {
             margin-bottom: 30px;
             background-color: #fff8e1;
@@ -98,7 +94,6 @@
             color: #856404;
         }
 
-        /* Альтернативная ссылка */
         .alt-link-text {
             margin: 0 0 10px 0;
             font-size: 14px;
@@ -118,7 +113,7 @@
             text-decoration: underline;
         }
 
-        /* Подвал */
+        /* Підвал */
         .footer {
             padding: 24px 40px;
             background-color: #fafafa;
@@ -144,14 +139,14 @@
                     
                     <tr>
                         <td class="header">
-                            <h1 class="title">Добро пожаловать! 👋</h1>
+                            <h1 class="title">Ласкаво просимо! 👋</h1>
                         </td>
                     </tr>
                     
                     <tr>
                         <td class="content">
-                            <p class="text">Здравствуйте, <strong>{{name}}</strong>!</p>
-                            <p class="text">Мы рады, что вы присоединились к нам. Чтобы завершить регистрацию и получить доступ к вашему аккаунту, пожалуйста, придумайте надежный пароль.</p>
+                            <p class="text">Вітаємо, <strong>{{name}}</strong>!</p>
+                            <p class="text">Ми раді, що ви приєдналися до нас. Щоб завершити реєстрацію та отримати доступ до вашого акаунту, будь ласка, придумайте надійний пароль.</p>
                             
                             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="btn-wrapper">
                                 <tr>
@@ -159,7 +154,7 @@
                                         <table border="0" cellspacing="0" cellpadding="0">
                                             <tr>
                                                 <td align="center" class="btn-cell">
-                                                    <a href="{{link}}" target="_blank" class="btn">Создать пароль</a>
+                                                    <a href="{{link}}" target="_blank" class="btn">Створити пароль</a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -171,21 +166,21 @@
                                 <tr>
                                     <td class="alert-accent">&nbsp;</td>
                                     <td class="alert-text">
-                                        ⏳ <strong>Обратите внимание:</strong> В целях безопасности эта ссылка для создания пароля действительна до <strong>{{expiration}}</strong>.
+                                        ⏳ <strong>Зверніть увагу:</strong> З міркувань безпеки це посилання для створення пароля дійсне до <strong>{{expiration}}</strong>.
                                     </td>
                                 </tr>
                             </table>
                             
-                            <p class="alt-link-text">Если кнопка выше не работает, скопируйте и вставьте эту ссылку в адресную строку браузера:</p>
+                            <p class="alt-link-text">Якщо кнопка вище не працює, скопіюйте та вставте це посилання в адресний рядок браузера:</p>
                             <p class="alt-link">
-                                <a href="{{link}}" target="_blank">Ссылка_для_создания_пароля</a>
+                                <a href="{{link}}" target="_blank">Посилання_для_створення_пароля</a>
                             </p>
                         </td>
                     </tr>
                     
                     <tr>
                         <td class="footer">
-                            <p class="footer-text">Если вы не регистрировались на нашем сайте, просто проигнорируйте и удалите это письмо.</p>
+                            <p class="footer-text">Якщо ви не реєструвалися на нашому сайті, просто проігноруйте та видаліть цей лист.</p>
                         </td>
                     </tr>
                     

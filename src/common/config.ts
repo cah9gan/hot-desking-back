@@ -11,7 +11,7 @@ const schema = convict({
     disabled: {
       doc: 'If true do not use email client',
       format: Boolean,
-      default: false,
+      default: true,
       env: 'EMAIL_DISABLED',
     },
     service: {
